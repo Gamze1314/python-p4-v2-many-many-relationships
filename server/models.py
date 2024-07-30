@@ -37,7 +37,7 @@ class Employee(db.Model):
 
     # Association proxy to get projects for this employee through assignments
     projects = association_proxy('assignments', 'proeject',
-                                 creator=lambda project_obj: Assignment(project=project=obj))
+                                 creator=lambda project_obj: Assignment(project=project_obj))
 
     def __repr__(self):
         return f'<Employee {self.id}, {self.name}, {self.hire_date}>'
